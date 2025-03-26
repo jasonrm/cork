@@ -82,7 +82,7 @@ impl Default for FormatRadix {
     }
 }
 
-#[derive(Default)]
+#[derive(Clone,Default)]
 pub struct OutputFormat {
     radix: FormatRadix,
     punctuate_number: bool,

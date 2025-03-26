@@ -45,7 +45,7 @@ impl Config {
 }
 
 fn default_prompt() -> String {
-    "cork> ".yellow().to_string()
+    "> ".yellow().to_string()
 }
 
 fn default_header() -> bool {

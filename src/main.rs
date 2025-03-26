@@ -201,7 +201,13 @@ fn proccess_command(line: String, ans: &mut i64, of: &mut OutputFormat) -> Resul
         expression::Command::Expr(expr) => {
             let val = expression::eval::eval_expr(&expr, *ans)?;
             *ans = val;
-            println!("{}", of.fmt(val));
+            for radix in FormatRadix::iter() {
+                println!(
+                    "{:>20} : {:<21}",
+                    of.clone().with_format_radix(radix).fmt(val),
+                    radix.to_string(),
+                );
+            }
         }
         expression::Command::Set(set) => {
             if set[0] == "of" {
