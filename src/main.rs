@@ -158,7 +158,6 @@ fn interactive(config: &Config) {
     history_path.push(history_file_name);
 
     if rl.load_history(&history_path).is_err() {
-        println!("No existing history!\n");
     }
 
     let mut of = OutputFormat::default()
@@ -181,11 +180,10 @@ fn interactive(config: &Config) {
                 };
             }
             Err(ReadlineError::Eof) => {
-                println!("Exiting ... ");
                 break;
             }
             Err(ReadlineError::Interrupted) => {
-                println!("Ctrl + C.\nPress Ctrl + D to exit");
+                break;
             }
             Err(err) => {
                 println!("Error: {}", err);
@@ -260,10 +258,6 @@ along with Cork; see the file LICENSE.  If not, see
 <https://www.gnu.org/licenses/>.";
 
 fn welcome() {
-    println!("Cork, version {}", crate_version!());
-    println!("{}\n", LICENSE_HEADER);
-    println!("Welcome to cork - a calculator for hex-lovers!");
-    println!("Press Ctrl + D to exit.");
 }
 
 fn warranty() {
