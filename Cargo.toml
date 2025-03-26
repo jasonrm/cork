@@ -12,15 +12,15 @@ categories = ["command-line-utilities", "mathematics"]
 
 [dependencies]
 rustyline = "10"
-pest = "2.4.1"
-pest_derive = "2.4.1"
-home = "0.5.4"
+pest = "2"
+pest_derive = "2"
+home = "0.5"
 serde = { version = "1", features = ["derive"] }
 serde_yaml = "0.9"
-getset = "0.1.2"
+getset = "0.1"
 anyhow = "1"
 clap = { version = "4", features = ["cargo", "derive"] }
 thiserror = "1"
-strum = { version = "0.24.1", features = ["derive"] }
-colored = "2.0.0"
-once_cell = "1.16.0"
+strum = { version = "0.24", features = ["derive"] }
+colored = "2"
+once_cell = "1"
